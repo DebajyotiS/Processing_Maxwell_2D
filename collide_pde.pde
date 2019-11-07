@@ -6,12 +6,13 @@
 
 
 
-particle[] elec = new particle[600];
+particle[] elec = new particle[600];  //This will create an array of 600 particle type objects. See the code for particle object.
+
 //PrintWriter hist;
 boolean record = false;
 color colour;
 void setup() {
-  //hist = createWriter("co-ordinate.txt");
+
   float x=0, y=0;
   int i, j;
   float diam = 10;
