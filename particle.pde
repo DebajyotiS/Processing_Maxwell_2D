@@ -113,7 +113,9 @@ public class particle {
   }
 
   public void bounce() {
-    float decay = 1.3;
+    float decay = 1.3; //decay is a paramater which controls how much velocity (momentum) the particle loses upon collision with a 
+                      // wall. 
+                      
     if ( this.xpos - this.size/2.0 < 0 ) {
       this.setDX( Math.abs(this.getDX())/decay );
     } else if ( this.xpos + this.size/2.0 > width ) {
@@ -131,7 +133,9 @@ public class particle {
 
     for (int i =0; i< elec.length; i++) {
 
-      if (this == elec[i]) continue;
+      if (this == elec[i]) continue; //do not collide with itself. That will be trippy.
+      
+      //detect collision and resolve the velocities, i.e. momentum conservation.
       if (dist(this.getX(), this.getY(), elec[i].getX(), elec[i].getY()) - this.getsize() <0) {
         collision(this, elec[i]);
       }
